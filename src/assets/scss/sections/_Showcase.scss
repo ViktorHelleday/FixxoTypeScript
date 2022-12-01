@@ -1,0 +1,45 @@
+.showcase {
+    margin-top: 50px;
+
+
+    .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .middlecontent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                color: $color-dark;
+                font-weight: bolder;
+                font-size: 65px;
+                width: 25rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+        
+            p {
+                color: $color-dark;
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 2.5rem;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        .scimgleft {
+            height: 770px;
+            margin-left: 200px;
+
+        }
+
+        .scimgright {
+            height: 770px;
+            margin-right: 200px;
+        }
+    }
+}

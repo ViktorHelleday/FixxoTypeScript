@@ -1,0 +1,154 @@
+.inspo {
+    margin-top: 50px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        
+
+        .pamelaLeft {
+            position: relative;
+
+            .imgLeft {
+                height: 95%;
+                width: 100%;
+                padding-right: 10px;
+                object-fit: cover;
+            }
+
+            h1 {
+                position: absolute;
+                color: $color-white;
+                font-size: 3rem;
+                top: 13%;
+                left: 50%;
+                margin-bottom: 10px;
+            }
+
+            p {
+                position: absolute;
+                color: $color-white;
+                font-weight: 500;
+                font-size: 3rem;
+                top: 23%;
+                left: 50%;
+            }
+
+            .btn-Pam {
+                position: absolute;
+                text-align: center;
+                background-color: $color-dark;
+                color: $color-white;
+                font-size: 1.3rem;
+                font-weight: 600;
+                top: 45%;
+                left: 50%;
+                transition: all 0.3s ease-in-out;
+                border: none;
+                width: 12rem;
+                height: 5rem;
+
+                .corner-left {
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    border-left: 2px solid $color-white;
+                    border-top: 2px solid $color-white;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .corner-right {
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    border-right: 2px solid $color-white;
+                    border-bottom: 2px solid $color-white;
+                }
+
+                &:hover {
+                    color: $color-dark ;
+                    background-color: $color-white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .letsBeRight {
+            position: relative;
+
+            .imgRight {
+                height: 95%;
+                width: 100%;
+                padding-left: 10px;
+                object-fit: cover;
+            }
+
+            h1 {
+                position: absolute;
+                color: $color-dark;
+                font-size: 3rem;
+                top: 13%;
+                left: 10%;
+            }
+
+            p {
+                position: absolute;
+                color: $color-dark;
+                font-weight: 500;
+                font-size: 3rem;
+                top: 23%;
+                left: 10%;
+            }
+
+            .btn-Con {
+                position: absolute;
+                text-align: center;
+                background-color: $color-white;
+                color: $color-dark;
+                font-size: 1.3rem;
+                font-weight: 600;
+                top: 45%;
+                left: 10%;
+                transition: all 0.3s ease-in-out;
+                border: none;
+                width: 12rem;
+                height: 5rem;
+
+                .corner-left {
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    border-left: 2px solid $color-dark;
+                    border-top: 2px solid $color-dark;
+                }
+
+                .corner-right {
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    border-right: 2px solid $color-dark;
+                    border-bottom: 2px solid $color-dark;
+                }
+
+                &:hover {
+                    color: $color-white;
+                    background-color: $color-dark;
+                    text-decoration: none;
+                }
+
+            }
+        }
+    }
+}
