@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardType> = ({item}) => {
                     <button className="menu-link"><i className="fa-regular fa-code-compare"></i></button>
                     <button onClick={() => increment({articleNumber: item.articleNumber, product: item, quantity: 1})} className="menu-link"><i className="fa-regular fa-bag-shopping"></i></button>
                 </div>
-                <NavLink to={`/products/${item.name.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme btn-card-theme d-xl-none">
+                <NavLink to={`/products/${item.articleNumber}`} className="btn-theme btn-card-theme d-xl-none">
                     <span className="corner-left"></span>
                     QUICK VIEW
                     <span className="corner-right"></span>

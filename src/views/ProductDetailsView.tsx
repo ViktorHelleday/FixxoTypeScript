@@ -6,19 +6,18 @@ import { useParams } from 'react-router-dom';
 import { ProductContextType, useProductContext } from '../contexts/contexts';
 
 const ProductDetailsView: React.FC = () => {
-    const {id} = useParams<string>()
-    const productContext = useProductContext() as ProductContextType
+    const {id} = useParams<string>();
+    const ProductContext = useProductContext() as ProductContextType
 
     useEffect (() => {
-      
-      productContext.getProduct(id)
+      ProductContext.getProduct(id)
     }, [])
 
   return (
     <>
-        <MainMenuSection />
-        <ProductDetailSection item={productContext.product} />
-        <FooterSection />
+    <MainMenuSection />
+    <ProductDetailSection item={ProductContext.product} />
+    <FooterSection />
     </>
   )
 }
