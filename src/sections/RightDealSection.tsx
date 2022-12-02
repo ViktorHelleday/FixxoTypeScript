@@ -1,7 +1,12 @@
 import React from 'react'
 import ProductCard from '../components/ProductCard'
+import { ProductItem } from '../models/ProductModels'
 
-const RightDealSection = ({items = []}) => {
+export interface RightDealSectionType {
+    items: ProductItem[]
+}
+
+const RightDealSection: React.FC<RightDealSectionType> = ({items = []}) => {
   return (
     <section className="dealSection container">
         <div className="row row-cols-2 row-cols-md-2 g-4 leftDealCards">

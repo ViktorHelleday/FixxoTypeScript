@@ -1,4 +1,3 @@
-import React from 'react'
 import pamelaImg from '../assets/images/pamelaReif.png'
 import letsBeImg from '../assets/images/letsBe.png'
 

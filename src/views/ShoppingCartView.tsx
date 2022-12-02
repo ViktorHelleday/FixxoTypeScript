@@ -2,15 +2,13 @@ import React from 'react'
 import MainMenuSection from '../sections/MainMenuSection'
 import FooterSection from '../sections/FooterSection'
 
-const CategoriesView = () => {
+const ShoppingCartView: React.FC = () => {
   return (
     <>
       <MainMenuSection />
       <FooterSection />
-
-
     </>
   )
 }
 
-export default CategoriesView
+export default ShoppingCartView

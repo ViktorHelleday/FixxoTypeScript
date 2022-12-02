@@ -4,15 +4,14 @@ import { ProductItem } from '../models/ProductModels'
 
 
 interface ProductDetailsType {
-    product: ProductItem
+    item: ProductItem
 }
 
-const ProductDetailSection: React.FC<ProductDetailsType> = ({ product }) => {
+const ProductDetailSection: React.FC<ProductDetailsType> = ({item}) => {
     return (
         <div>
-            <h1>{product.name}</h1>
-            <p>${product.price}</p>
-            <img src={product.imageName} alt="" />
+            <h1>{item.name}</h1>
+            <img src={item.imageName} alt="Varför visas inte denna del" />
         </div>
     )
 }

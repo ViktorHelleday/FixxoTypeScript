@@ -1,27 +1,33 @@
 import { createContext, useContext, useState } from 'react';
 import ShoppingCart from '../components/ShoppingCart';
+import { CartItem } from '../models/ShoppingCartModels';
 
-const ShoppingCartContext = createContext()
 
-export const useShoppingCart = () => {
-    return useContext(ShoppingCartContext)
+interface ShoppingCartProviderType {
+    children: any
 }
 
-export const ShoppingCartProvider = ({children}) => {
-    const [cartItems, setCartItems] = useState([])
+export interface ShoppingCartContextType {
+    items: CartItem[]
+    totalQuantity: number
+    increment: (cartItem: CartItem) => void
+    decrement: (cartItem: CartItem) => void
+    remove: (articleNumber: string) => void
+}
 
-    const cartQuantity = cartItems.reduce(
-        (quantity, item) => item.quantity + quantity, 0
-    )
-    
-    const getItemQuantity = (articleNumber) => {
-        return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
-    }
 
-    const incrementQuantity = (cartItem) => {
+
+export const ShoppingCartContext = createContext<ShoppingCartContextType | null>(null)
+export const useShoppingCartContext = () => {return useContext(ShoppingCartContext)}
+
+export const ShoppingCartProvider: React.FC<ShoppingCartProviderType> = ({children}) => {
+    const [items, setItems] = useState<CartItem[]>([])
+    const totalQuantity = items.reduce((quantity, item) => item.quantity + quantity, 0)
+
+    const increment = (cartItem: CartItem) => {
         const {articleNumber, product} = cartItem
 
-        setCartItems(items => {
+        setItems(items => {
             if (items.find(item => item.articleNumber === articleNumber) == null) {
                 return [...items, { articleNumber, product, quantity: 1 }]
             } else {
@@ -36,11 +42,11 @@ export const ShoppingCartProvider = ({children}) => {
         })
     }
 
-    const decrementQuantity = (cartItem) => {
+    const decrement = (cartItem: CartItem) => {
         const {articleNumber} = cartItem
 
-        setCartItems(items => {
-            if (items.find(item => item.articleNumber === articleNumber).quantity == 1) {
+        setItems(items => {
+            if (items.find(item => item.articleNumber === articleNumber)?.quantity == 1) {
                 return items.filter(item => item.articleNumber !== articleNumber)
             } else {
                 return items.map(item => {
@@ -54,13 +60,13 @@ export const ShoppingCartProvider = ({children}) => {
         })
     }
 
-    const removeItem = (articleNumber) => {
-        setCartItems(items => {
+    const remove = (articleNumber: string) => {
+        setItems(items => {
             return items.filter(item => item.articleNumber !== articleNumber)
         })
     }
 
-    return <ShoppingCartContext.Provider value={{cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem}}>
+    return <ShoppingCartContext.Provider value={{items, totalQuantity, increment, decrement, remove}}>
         {children}
         <ShoppingCart />
     </ShoppingCartContext.Provider>

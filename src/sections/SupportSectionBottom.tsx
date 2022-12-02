@@ -1,4 +1,3 @@
-import React from 'react'
 import supportImg from '../assets/images/support.png'
 import secureImg from '../assets/images/secure.png'
 import deliveryImg from '../assets/images/deliver.png'
