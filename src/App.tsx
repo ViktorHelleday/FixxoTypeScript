@@ -14,11 +14,13 @@ import NotFoundView from './views/NotFoundView';
 
 import ProductProvider from './contexts/contexts';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
+import UserProvider from './contexts/UserContext';
 
 
 function App() {
    return (
     <BrowserRouter>
+      <UserProvider>
       <ShoppingCartProvider>
       <ProductProvider>
         <Routes>
@@ -33,8 +35,9 @@ function App() {
           <Route path="/shoppingcart" element={<ShoppingCartView />} />
           <Route path="*" element={<NotFoundView />} />
         </Routes>
-        </ProductProvider>
+      </ProductProvider>
       </ShoppingCartProvider>
+      </UserProvider>
     </BrowserRouter>
   );
 }

@@ -15,7 +15,7 @@ const HomeView: React.FC = () => {
   const {featuredProducts, getFeaturedProducts, dealProducts, getDealProducts} = useProductContext() as ProductContextType
 
   useEffect(() => {
-    getFeaturedProducts(8)
+    getFeaturedProducts(4)
   }, [])
 
   useEffect(() => {

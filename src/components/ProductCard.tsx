@@ -30,13 +30,7 @@ const ProductCard: React.FC<ProductCardType> = ({item}) => {
             <div className="card-body">
                 <p className="card-category">{item.category}</p>
                 <h5 className="card-title">{item.name}</h5>
-                <p className="card-rating">
-                    <i className="fa-sharp fa-solid fa-star"></i>
-                    <i className="fa-sharp fa-solid fa-star"></i>
-                    <i className="fa-sharp fa-solid fa-star"></i>
-                    <i className="fa-sharp fa-solid fa-star"></i>
-                    <i className="fa-sharp fa-solid fa-star"></i>
-                </p>
+                <p className="card-rating">{item.rating}</p>
                 <p className="card-price">{currencyFormatter(item.price)}</p>
             </div>
         </div>
